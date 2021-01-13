@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: loki-acls
+  name: loki-acls
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loki-acls
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: loki-acls
+    spec:
+      containers:
+      - image: bastjan/loki-acls:latest
+        name: loki-acls
+        resources: {}
+status: {}

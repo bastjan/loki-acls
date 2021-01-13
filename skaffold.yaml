@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: loki-acls
+build:
+  artifacts:
+  - image: bastjan/loki-acls
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - manifests/*.yaml
